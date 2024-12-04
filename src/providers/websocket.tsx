@@ -1,14 +1,22 @@
-import { WebsocketProvider } from "y-websocket";
+//import { WebsocketProvider } from "y-websocket";
 import * as Y from "yjs";
 import { ConnectProvider } from "./types";
+import { HocuspocusProvider } from "@hocuspocus/provider";
 
 export class WebSocketConnectProvider implements ConnectProvider {
   doc: Y.Doc;
-  private provider: WebsocketProvider;
+  // private provider: WebsocketProvider;
+  private provider: HocuspocusProvider;
 
   constructor(url: string, room: string, doc: Y.Doc) {
     this.doc = doc;
-    this.provider = new WebsocketProvider(url, room, doc);
+    this.provider = new HocuspocusProvider({
+      url,
+      document: doc,
+      token: 'user_2Wa3n5qz0yy268gHqZwbYmwJWQ3',
+      name: `${room}`,
+      connect: false
+    });
   }
 
   connect() {
@@ -22,7 +30,7 @@ export class WebSocketConnectProvider implements ConnectProvider {
 
   async waitForSynced() {
     return new Promise<void>((resolve) => {
-      this.provider.once("synced", () => resolve());
+      this.provider.on("synced", () => resolve());
     });
   }
 }

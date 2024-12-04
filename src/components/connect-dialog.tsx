@@ -85,8 +85,8 @@ export function ConnectDialog({
   onConnect: (provider: ConnectProvider) => void;
 }) {
   const [yDoc, setYDoc] = useYDoc();
-  const [url, setUrl] = useState("wss://demos.yjs.dev/ws");
-  const [room, setRoom] = useState("quill-demo-2024/06");
+  const [url, setUrl] = useState("ws://localhost:3000/collaboration/coding/GlUTk4hhMGoGxfHgkXNW2");
+  const [room, setRoom] = useState("GlUTk4hhMGoGxfHgkXNW2");
   const [provider, setProvider] = useState("Quill");
   const [needCreateNewDoc, setNeedCreateNewDoc] = useState(true);
   const officialDemo = officialDemos.find((demo) => demo.name === provider);

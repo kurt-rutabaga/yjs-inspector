@@ -17,6 +17,7 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@fn-sphere/filter": "^0.6.0",
+    "@hocuspocus/provider": "^2.14.0",
     "@mui/material": "^5.16.7",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
